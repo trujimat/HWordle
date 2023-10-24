@@ -1,9 +1,84 @@
-<mxfile host="app.diagrams.net" modified="2023-10-24T02:01:53.478Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" version="22.0.6" etag="ZPnvvvhB8ObeWOb_boH2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-24T02:50:51.759Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="13HMbLte-AEemjr1SlZI" version="22.0.6" type="github">
   <diagram name="Page-1" id="AM9Jz454eZbP0Hzq4OTY">
-    <mxGraphModel>
+    <mxGraphModel dx="1364" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-1" value="HIstogram&lt;br&gt;&lt;br&gt;compute_histogram&lt;br&gt;compute_entropy&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="180" y="210" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-2" value="State&lt;br&gt;&lt;br&gt;chosen word&lt;br&gt;first_letter:boolean&lt;br&gt;second_letter:boolean&lt;br&gt;third_letter:boolean&lt;br&gt;fourth_letter: boolean&lt;br&gt;fifth_letter_boolean&lt;br&gt;ChoseWord" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="540" y="210" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-4" value="Words&lt;br&gt;&lt;br&gt;possible_words&lt;br&gt;&lt;br&gt;compute_words" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="180" y="520" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-6" value="Possible&lt;br&gt;Words" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="120" y="840" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="880" as="sourcePoint" />
+            <mxPoint x="280" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-8" value="Create histogram" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="280" y="840" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-9" value="for each &lt;br&gt;word" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="205" y="843" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-11" value="Compute entropy" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="440" y="843" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="OiGjM5vbhxBToe-Zl4If-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="888" as="sourcePoint" />
+            <mxPoint x="410" y="838" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-13" value="each&amp;nbsp;&lt;br&gt;histogram" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="853" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="OiGjM5vbhxBToe-Zl4If-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="883" as="sourcePoint" />
+            <mxPoint x="660" y="1070" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="883" />
+              <mxPoint x="640" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-15" value="best word" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520" y="893" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OiGjM5vbhxBToe-Zl4If-17" target="OiGjM5vbhxBToe-Zl4If-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="OiGjM5vbhxBToe-Zl4If-17" target="OiGjM5vbhxBToe-Zl4If-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="30" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="1050" />
+              <mxPoint x="80" y="1050" />
+              <mxPoint x="80" y="1001" />
+              <mxPoint x="160" y="1001" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-17" value="Correct&lt;br&gt;word?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="960" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-18" value="Finish, get score" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1120" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-20" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1058" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OiGjM5vbhxBToe-Zl4If-22" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1028" width="40" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

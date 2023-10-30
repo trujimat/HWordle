@@ -1,5 +1,6 @@
 import os
 from enum import Enum
+from Services.Words import has_same_letter_at_position, does_not_have_letter, has_letter_somewhere
 
 class Result(Enum):
     CORRECT = 'CORRECT'
@@ -8,17 +9,12 @@ class Result(Enum):
 
 class Status:
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.chosen_word = ''
-        self.possible_words = self.obtain_initial_word_list()
-        self.first_letter = Result.INCORRECT
-        self.second_letter = Result.INCORRECT
-        self.third_letter = Result.INCORRECT
-        self.fourth_letter = Result.INCORRECT
-        self.fifth_letter = Result.INCORRECT
+        self.possible_words = set(self.obtain_initial_word_list())
+        self.letter_results = [Result.INCORRECT] * 5
 
     def obtain_initial_word_list(self):
-
         path = os.path.abspath(__file__)
         resources_dir = os.path.join(os.path.dirname(path), '..', 'Resources')
         file_path = os.path.join(resources_dir, 'WordleWords.txt')
@@ -26,22 +22,22 @@ class Status:
         with open(file_path, 'r') as file:
             lines = file.readlines()
 
-        word_list = []
+        return [line.strip() for line in lines]
 
-        for line in lines:
-            word = line.strip()
-            word_list.append(word)
+    def update_possible_words(self):
+        if not all(result == Result.CORRECT for result in self.letter_results):
+            self.possible_words = {word for word in self.possible_words if self.is_possible_word(word)}
+            self.possible_words.discard(self.chosen_word)
 
-        return word_list
-    
-    def update_possible_words(self, possible_words):
-        self.possible_words = possible_words
-
-    def discard_words(self):
-
-        updated_possible_words = []        
-        for word in self.possible_words:
-            if self.is_possible_word(word):
-                updated_possible_words.append(word)
-
-        return updated_possible_words
+    def is_possible_word(self, word):
+        for i, result in enumerate(self.letter_results):
+            if result == Result.INCORRECT:
+                if not does_not_have_letter(self.chosen_word, word, i):
+                    return False
+            elif result == Result.INCORRECT_PLACE:
+                if not has_letter_somewhere(self.chosen_word, word, i):
+                    return False
+            else:
+                if not has_same_letter_at_position(self.chosen_word, word, i):
+                    return False
+        return True

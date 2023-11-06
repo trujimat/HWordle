@@ -25,7 +25,7 @@ class Status:
         return [line.strip() for line in lines]
 
     def update_possible_words(self):
-        if not all(result == Result.CORRECT for result in self.letter_results):
+        if not self.found_word():
             self.possible_words = {word for word in self.possible_words if self.is_possible_word(word)}
             self.possible_words.discard(self.chosen_word)
 
@@ -41,3 +41,6 @@ class Status:
                 if not has_same_letter_at_position(self.chosen_word, word, i):
                     return False
         return True
+    
+    def found_word(self):
+        return all(result == Result.CORRECT for result in self.letter_results)

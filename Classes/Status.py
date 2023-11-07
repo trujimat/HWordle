@@ -1,18 +1,13 @@
 import os
-from enum import Enum
 from Services.Words import has_same_letter_at_position, does_not_have_letter, has_letter_somewhere
-
-class Result(Enum):
-    CORRECT = 'CORRECT'
-    INCORRECT = 'INCORRECT'
-    INCORRECT_PLACE = 'INCORRECT PLACE'
+from Classes.Letter_Result import Letter_Result
 
 class Status:
 
     def __init__(self):
         self.chosen_word = ''
         self.possible_words = set(self.obtain_initial_word_list())
-        self.letter_results = [Result.INCORRECT] * 5
+        self.letter_results = [Letter_Result.INCORRECT] * 5
 
     def obtain_initial_word_list(self):
         path = os.path.abspath(__file__)
@@ -31,10 +26,10 @@ class Status:
 
     def is_possible_word(self, word):
         for i, result in enumerate(self.letter_results):
-            if result == Result.INCORRECT:
+            if result == Letter_Result.INCORRECT:
                 if not does_not_have_letter(self.chosen_word, word, i):
                     return False
-            elif result == Result.INCORRECT_PLACE:
+            elif result == Letter_Result.INCORRECT_PLACE:
                 if not has_letter_somewhere(self.chosen_word, word, i):
                     return False
             else:
@@ -43,4 +38,4 @@ class Status:
         return True
     
     def found_word(self):
-        return all(result == Result.CORRECT for result in self.letter_results)
+        return all(result == Letter_Result.CORRECT for result in self.letter_results)

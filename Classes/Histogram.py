@@ -11,12 +11,7 @@ class Histogram:
         self.possible_words = possible_words
         self.word = word
         self.entropy = 0
-        self.histogram = [Possibilities()]*243
-        
-
-    def compute_entropy(self):
-        probabilities = [possibility['probability'] for possibility in self.histogram]
-        self.entropy = entropy(probabilities, base=2)
+        self.histogram = [Possibilities() for _ in range(243)] 
 
     def create_histogram(self):
         domain = self.create_domain()
@@ -25,8 +20,10 @@ class Histogram:
             self.histogram[i].words = self.get_possible_words(domain[i])
             self.histogram[i].length_words = len(self.histogram[i].words)
             self.histogram[i].probability = self.histogram[i].length_words/len(self.possible_words)
-            # print(self.histogram[i].letter_score)
-            # print(self.histogram[i].words)
+
+    def compute_entropy(self):
+        probabilities = [possibility.probability for possibility in self.histogram]
+        self.entropy = entropy(probabilities, base=2)
 
     def get_possible_words(self, index):
         # The index is a result ie: incorrect, correct, incorrect place, correct, correct

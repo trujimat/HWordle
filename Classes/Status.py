@@ -1,5 +1,5 @@
 import os
-from Services.Words import has_same_letter_at_position, does_not_have_letter, has_letter_somewhere
+from Services.Words import has_same_letter_at_position, does_not_have_letter, has_letter_somewhere, is_possible_word
 from Classes.Letter_Result import Letter_Result
 
 class Status:
@@ -21,21 +21,8 @@ class Status:
 
     def update_possible_words(self):
         if not self.found_word():
-            self.possible_words = {word for word in self.possible_words if self.is_possible_word(word)}
+            self.possible_words = {word for word in self.possible_words if is_possible_word(self.chosen_word, word, self.letter_results)}
             self.possible_words.discard(self.chosen_word)
-
-    def is_possible_word(self, word):
-        for i, result in enumerate(self.letter_results):
-            if result == Letter_Result.INCORRECT:
-                if not does_not_have_letter(self.chosen_word, word, i):
-                    return False
-            elif result == Letter_Result.INCORRECT_PLACE:
-                if not has_letter_somewhere(self.chosen_word, word, i):
-                    return False
-            else:
-                if not has_same_letter_at_position(self.chosen_word, word, i):
-                    return False
-        return True
     
     def found_word(self):
         return all(result == Letter_Result.CORRECT for result in self.letter_results)

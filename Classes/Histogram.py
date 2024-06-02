@@ -4,6 +4,7 @@ from scipy.stats import entropy
 from Classes.Possibilities import Possibilities
 from Classes.Letter_Result import Letter_Result
 from Services.Words import is_possible_word
+from Resources.Constants import letters_per_word
 
 class Histogram:
 
@@ -44,7 +45,7 @@ class Histogram:
         elements = [result for result in Letter_Result]
 
         # Generate all combinations of 5 elements
-        domain = list(product(elements, repeat=5))
+        domain = list(product(elements, repeat=letters_per_word))
 
         return domain
     

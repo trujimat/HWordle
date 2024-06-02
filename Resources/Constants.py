@@ -1,0 +1,1 @@
+letters_per_word = 5

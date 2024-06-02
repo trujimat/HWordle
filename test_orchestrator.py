@@ -1,6 +1,6 @@
-from orchestrator import orchestrate
+from Services.orchestrator import orchestrate
 from Classes.Status import Status
-from Classes.Letter_Result import Letter_Result, compute_word_score
+from Classes.Letter_Result import compute_word_score
 
 answer_word = 'amber'
 candidate_word = ''

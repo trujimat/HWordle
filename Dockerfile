@@ -4,4 +4,7 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python3", "test_orchestrator.py"]
+ENTRYPOINT ["python", "test_orchestrator.py"]
+
+# Set default arguments (optional)
+CMD ["default_arg1", "default_arg2"]

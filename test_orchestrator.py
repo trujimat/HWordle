@@ -1,8 +1,10 @@
+import sys
 from Services.orchestrator import orchestrate
 from Classes.Status import Status
 from Classes.Letter_Result import compute_word_score
 
-answer_word = 'amber'
+answer_word = sys.argv[1]
+print(f'the answer word is {answer_word}')
 candidate_word = ''
 iterator = 0
 status = Status()

@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Add the parent directory of HWordle to sys.path
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
 from Classes.Status import Status
 from Classes.Letter_Result import Letter_Result
 

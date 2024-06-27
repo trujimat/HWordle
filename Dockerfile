@@ -4,7 +4,7 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python", "test_orchestrator.py"]
+ENTRYPOINT ["python", "main.py"]
 
 # Set default arguments (optional)
 CMD ["default_arg1", "default_arg2"]

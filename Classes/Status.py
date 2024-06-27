@@ -13,7 +13,7 @@ class Status:
     def obtain_initial_word_list(self):
         path = os.path.abspath(__file__)
         resources_dir = os.path.join(os.path.dirname(path), '..', 'Resources')
-        file_path = os.path.join(resources_dir, 'WordleWordsTest.txt')
+        file_path = os.path.join(resources_dir, 'WordleWords.txt')
 
         with open(file_path, 'r') as file:
             lines = file.readlines()

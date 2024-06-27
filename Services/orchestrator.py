@@ -27,9 +27,6 @@ def orchestrate(possible_words, num_processes):
             processes.append(p)
             p.start()
 
-        # Print process IDs
-        for i, p in enumerate(processes):
-            print(f"ID of process p{i+1}: {p.pid}")
 
         # Wait until all processes are finished
         for p in processes:
@@ -44,7 +41,6 @@ def orchestrate(possible_words, num_processes):
 def orchestrate_subprocess(possible_words, shared_data, lock, index):
 
     for word in possible_words:
-        print(f"The word in this moment is {word}")
         histogram = Histogram(possible_words=possible_words, word=word)
         histogram.create_histogram()
         histogram.compute_entropy()
